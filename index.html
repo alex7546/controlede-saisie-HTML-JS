@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form name="F" method="post" onsubmit=" return verifier()">
+		<fieldset>
+				<legend>Contrôle de saisie :</legend>
+				<table width="100%">
+					<tr>
+						<td>Nom :</td>
+						<td><input type="text" name="I1"></td>
+					</tr>
+					<tr>
+						<td>Email : </td>
+						<td><input type="text" name="I2"></td>
+					</tr>
+					<tr>
+						<td>Age :</td>
+						<td><input type="text" name="I3"></td>
+					</tr>
+					<tr>
+						<td>Sexe : </td>
+						<td>
+							<input type="radio" name="I4" value="M">M
+							<input type="radio" name="I4" value="F">F
+						</td>
+					</tr>
+					<tr>
+						<td>Profession : </td>
+						<td>
+							<select>
+								<option selected>Médecin</option>
+								<option>bnay</option>
+								<option>3ssasse</option>
+								<option>l3abe</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="submit" value="Envoyer">
+							<input type="reset" value="Annuler">
+						</td>
+					</tr>
+				</table>
+	</fieldset>
+	</form>
+</body>
+<script type="text/javascript">
+	var nom = F.I1 ; 
+	var email = F.I2 ; 
+	var age = F.I3 ; 
+	var sexe = F.I4 ; 
+	function verifier(){
+		if(nom.value=="" || email.value=="" || age.value=="" || sexe.value==0){
+			alert("Veuillez remplisser tous les champs");
+			return false;
+		}
+		else if(isNaN(age.value)==true){
+			alert("Veuillez entrer un age valide");
+			age.focus();
+			return false;
+	   }
+	   else if(email.value.indexOf('@')==-1){
+	   	alert("Veuillez entrer un mail valide");
+	   	email.focus();
+	   	return false;
+	   }
+
+	}
+		
+</script>
+</html>
